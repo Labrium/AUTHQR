@@ -101,7 +101,7 @@ function startLiveScan(device) {
 	if (device == "webcam") {
 		document.getElementById("screenbutton").disabled = true;
 		document.getElementById("cambutton").onclick = stopLiveScan;
-		document.getElementById("cambutton").textContent = "Stop scanning";
+		document.getElementById("cambutton").textContent = "Cancel";
 		ol.classList.add("scanning");
 		navigator.mediaDevices.getUserMedia({
 			video: {
@@ -109,7 +109,7 @@ function startLiveScan(device) {
 					ideal: 960
 				},
 				height: {
-					ideal: 540
+					ideal: 960 //540
 				},
 				facingMode: "environment"
 			},
@@ -129,7 +129,7 @@ function startLiveScan(device) {
 		//c.canvas.style.display = "none";
 		document.getElementById("cambutton").disabled = true;
 		document.getElementById("screenbutton").onclick = stopLiveScan;
-		document.getElementById("screenbutton").textContent = "Stop scanning";
+		document.getElementById("screenbutton").textContent = "Cancel";
 		ol.classList.add("scanning");
 		navigator.mediaDevices.getDisplayMedia({
 			video: {
@@ -176,7 +176,7 @@ function stopLiveScan() {
 		document.getElementById("screenbutton").onclick = function () {
 			startLiveScan("screen");
 		};
-		document.getElementById("cambutton").textContent = "Scan using webcam";
+		document.getElementById("cambutton").textContent = "Scan webcam";
 		document.getElementById("screenbutton").textContent = "Scan screen";
 		c.canvas.classList.remove("flip");
 		cam.classList.remove("flip");
