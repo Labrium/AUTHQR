@@ -106,10 +106,10 @@ function startLiveScan(device) {
 		navigator.mediaDevices.getUserMedia({
 			video: {
 				width: {
-					ideal: 4096
+					ideal: 960
 				},
 				height: {
-					ideal: 2160
+					ideal: 540
 				},
 				facingMode: "environment"
 			},
@@ -134,10 +134,10 @@ function startLiveScan(device) {
 		navigator.mediaDevices.getDisplayMedia({
 			video: {
 				width: {
-					ideal: 4096
+					ideal: 960
 				},
 				height: {
-					ideal: 2160
+					ideal: 540
 				}
 			},
 			audio: false

@@ -21,7 +21,7 @@ span {
 	height: 100%;
 	top: 50%;
 	left: 50%;
-	transform: translate(-50%, -50%) scale(1.5);
+	transform: translate(-50%, -50%) scale(2);
 	z-index: -1;
 	filter: blur(40px) saturate(150%);
 }
