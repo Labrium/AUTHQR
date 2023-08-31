@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+	<title>AUTHQR</title>
+	<meta charset="utf-8" />
+	<link rel="stylesheet" href="./Styles/Main.css" />
+</head>
+
+<body>
+	<video playsinline id="cam"></video>
+	<canvas id="uqr"></canvas>
+	<input type="file" accept="image/*" id="upload" />
+	<br />
+	<div id="overlay">
+		<div>
+			<button id="cambutton"></button>
+			<button id="screenbutton"></button>
+			<label for="crop">Crop</label><input type="checkbox" id="crop" />
+		</div>
+		<div id="errmsg"></div>
+		<div id="usemsg">
+			<hr />
+			<span id="unicode"></span>
+			<br />
+			<span>Save this QR code to sign in later</span>
+			<br />
+			<img id="qr"></img>
+			<br /><br />
+			<span>Use this code to continue</span>
+			<span id="ccode"></span>
+			<br />
+			<div>
+			<label>Type</label>
+			<select id="sel" required>
+				<option value="1">Base32 (a-z, 2-7)</option>
+				<option value="2">Hexadecimal (a-f, 0-9)</option>
+			</select>
+			<label>Digits</label>
+			<input id="num" type="number" min="6" max="8" value="6" required />
+			</div>
+		</div>
+	</div>
+
+	<script src="./Scripts/qrcode.js"></script>
+	<script src="./Scripts/Convert.js"></script>
+	<script src="./Scripts/TOTP.js"></script>
+	<script src="./Scripts/Main.js"></script>
+
+	<div id="IMPORTANT">
+		<p>
+			Labrium AUTHQR does NOT send ANY information ANYWHERE or to ANYONE at ANY TIME.
+			<br /><br />
+			NO information of ANY KIND is stored remotely, locally, or ANYWHERE ELSE.
+			<br /><br />
+			To further protect your privacy, an offline version of this web app will be available for download soon.
+		</p>
+		<button onclick="this.parentElement.remove();">OK</button>
+	</div>
+
+	<div id="credits">
+		Copyright &copy; 2023 Labrium.
+		TOTP generator and Base32/Hex conversion code Copyright &copy; 2018 by
+		<a rel="noreferrer noopener nofollow" target="_blank" href="https://cable.ayra.ch/">Kevin Gut</a>.
+	</div>
+</body>
+
+</html>
